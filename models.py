@@ -25,6 +25,8 @@ class UploadForm(Form):
                  [validators.DataRequired()])
   chords = TextAreaField('Song Text & Chords',
                  [validators.DataRequired()])
+  source = StringField('Chords Source',
+                 [validators.DataRequired()])
   submit = SubmitField('Submit')
 
 class Login(Form):

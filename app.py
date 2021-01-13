@@ -1,6 +1,6 @@
 # app.py
 #!bin/python
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, Markup
 from models import RegForm, UploadForm
 from flask_bootstrap import Bootstrap
 from pymongo import MongoClient
@@ -42,8 +42,12 @@ def uploadsong():
         title = request.form['title']
         author = request.form['author']
         chords = request.form['chords']
+        chords = chords.replace(' ', '&nbsp')
+        chords = chords.replace('\r\n','<br />')
+        source = request.form['source']
+#        chords = Markup("<br />".join(chords.split('\r\n'))) 
         songs.insert_one({'title': title, 'author': author, \
-                          'chords': chords})
+                          'chords': chords, 'source': source})
         return render_template('uploadsongdone.html', title=title, author=author)
     return render_template('uploadsong.html', form=form)
 
@@ -62,7 +66,6 @@ def allsongs():
 def getsong(title):
     song = songs.find_one({'title':title})
     return render_template('song.html', song=song)
-#    if request.method == 'POST':
 
 
 if __name__ == '__main__':

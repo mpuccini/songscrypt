@@ -17,7 +17,6 @@
       <tr>
 	<td>{{ song['title'] }}</td>
 	<td>{{ song['author'] }}</td>
-	<!-- <td><a href="{{ url_for('getsong', title=song['title'], author=song['author'])}}"><button type="button" class="btn btn-dark">Get Chords</button></a></td> -->
 	<td><a href="{{ url_for('getsong', title=song['title'])}}"><button type="button" class="btn btn-dark">Get</button></a></td>
       </tr>
       {% endfor %}
