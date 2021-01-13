@@ -7,7 +7,7 @@
   <p><a href="{{ song['source'] }}" target="_blank">Visit source</a></p>
     <!-- <samp>{{ song['chords'] }}</samp> -->
    <p> {{ song['chords']|safe }} </p>
-   <p> <a href="{{ song['source'] }}" target="_blank">Visit source</a></p>
   <hr>
+  <p><a href="{{ url_for('allsongs') }}">Back</a></p>
 </div>
 {% endblock %}
