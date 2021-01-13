@@ -1,0 +1,10 @@
+{% extends "bootstrap/base.html" %}
+{% block content %}
+<div class="container">
+  <h3>Upload a song</h3>
+  <hr>
+    Congratulations! {{ title }} by {{ author }} is now stored in the database!
+  <hr>
+  <p><a href="{{ url_for('index') }}">Back Home</a></p>
+</div>
+{% endblock %}

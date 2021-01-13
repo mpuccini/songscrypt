@@ -32,7 +32,7 @@ def registration():
         email = request.form['email']
         users.insert_one({'username': username, 'name': name, \
                                'password': password,'email':email})
-        return 'Good '+name+', we confirm your registration!'
+        return render_template('registrationdone.html', name=name)
     return render_template('registration.html', form=form)
 
 @app.route('/uploadsong', methods=['GET', 'POST'])
@@ -44,7 +44,7 @@ def uploadsong():
         chords = request.form['chords']
         songs.insert_one({'title': title, 'author': author, \
                           'chords': chords})
-        return 'Upload done! Now '+title+' is in the database.'
+        return render_template('uploadsongdone.html', title=title, author=author)
     return render_template('uploadsong.html', form=form)
 
 if __name__ == '__main__':
