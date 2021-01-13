@@ -1,6 +1,8 @@
 # model.py
 from wtforms import SubmitField, BooleanField, StringField, PasswordField, TextAreaField, validators
 from flask_wtf import Form
+
+
 class RegForm(Form):
   username = StringField('Username', 
                  [validators.DataRequired()])

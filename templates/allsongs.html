@@ -1,15 +1,15 @@
 {% extends "bootstrap/base.html" %}
-{% import "bootstrap/wtf.html" as wtf %}
 {% block content %}
 <div class="container">
   <h1>SongsCrypt</h1>
   <hr>
   <h3>Songs list</h3>
-  <table class="table table-striped table-hover table-responsive">
+  <table class="table table-striped table-hover">
     <thead class="thead-dark">
       <tr>
 	<th scope="col">Title</th>
 	<th scope="col">Author</th>
+	<th scope="col">Chords</th>
       </tr>
     </thead>
     <tbody>
@@ -17,11 +17,13 @@
       <tr>
 	<td>{{ song['title'] }}</td>
 	<td>{{ song['author'] }}</td>
+	<!-- <td><a href="{{ url_for('getsong', title=song['title'], author=song['author'])}}"><button type="button" class="btn btn-dark">Get Chords</button></a></td> -->
+	<td><a href="{{ url_for('getsong', title=song['title'])}}"><button type="button" class="btn btn-dark">Get</button></a></td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
   <hr>
-  <p><a href="{{ url_for('index') }}">Back Home</a></p>
+  <p><a href="{{ url_for('index') }}">Back</a></p>
 </div>
 {% endblock %}

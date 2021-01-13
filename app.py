@@ -52,5 +52,18 @@ def allsongs():
     songslist = songs.find()
     return render_template('allsongs.html', songslist=songslist)
 
+# @app.route('/getsong')
+# def getsong(title, author):
+#     query = { '$or': [{'title': title}, {'author':author}] }
+#     song = songs.find(query)
+#     return render_template('song.html', chords=song['chords'])
+
+@app.route('/getsong/<title>')#, methods=['GET', 'POST'])
+def getsong(title):
+    song = songs.find_one({'title':title})
+    return render_template('song.html', song=song)
+#    if request.method == 'POST':
+
+
 if __name__ == '__main__':
     app.run()
