@@ -47,5 +47,10 @@ def uploadsong():
         return render_template('uploadsongdone.html', title=title, author=author)
     return render_template('uploadsong.html', form=form)
 
+@app.route('/allsongs',)
+def allsongs():
+    songslist = songs.find()
+    return render_template('allsongs.html', songslist=songslist)
+
 if __name__ == '__main__':
     app.run()
