@@ -18,6 +18,9 @@ app.config.from_mapping(
     SECRET_KEY=b'myPL%9$7Ae5S%CTpwS^M4TNGGkND$Z5f')
 Bootstrap(app)
 
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 @app.route('/registration', methods=['GET', 'POST'])
 def registration():
@@ -32,7 +35,7 @@ def registration():
         return 'Good '+name+', we confirm your registration!'
     return render_template('registration.html', form=form)
 
-@app.route('/upload', methods=['GET', 'POST'])
+@app.route('/uploadsong', methods=['GET', 'POST'])
 def uploadsong():
     form = UploadForm(request.form)
     if request.method == 'POST' and form.validate_on_submit():
@@ -42,7 +45,7 @@ def uploadsong():
         songs.insert_one({'title': title, 'author': author, \
                           'chords': chords})
         return 'Upload done! Now '+title+' is in the database.'
-    return render_template('upload.html', form=form)
+    return render_template('uploadsong.html', form=form)
 
 if __name__ == '__main__':
     app.run()
