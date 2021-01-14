@@ -11,7 +11,6 @@ itsdangerous==1.1.0
 Jinja2==2.11.2
 MarkupSafe==1.1.1
 pymongo==3.11.2
-python-apt==1.8.4.2
 uWSGI==2.0.19.1
 virtualenv==15.1.0
 visitor==0.1.3
