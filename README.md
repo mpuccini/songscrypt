@@ -4,7 +4,31 @@ Data are assumed to be stored with mongoDB into a database named `songscrypt` th
  - `songs`: the song chords archive
  - `users`: that stores registered users
  
+## Clone repository
+```
+git clone https://gitea.kvarken.it/mpuccini/songscrypt.git
+```
 
+## Create a virtualenv
+```
+cd songscrypt
+```
+```
+python3 -m venv <venvname>
+```
+
+## Install dependencies
+```
+source songscrypt/<venvname>/bin/activate
+```
+```
+pip3 install -r requirements.txt
+```
+
+## Hot to run app
+```
+/songscrypt/<venvname>/bin/python3 /songscrypt/<venvname>/bin/gunicorn --workers 3 --bind unix:/songscrypt/songscrypt.sock -m 007 wsgi:app
+```
 
 ## ToDo
  - [X] Add registration form
