@@ -8,7 +8,7 @@ from pymongo import MongoClient
 
 app = Flask(__name__)
 
-client = MongoClient("mongodb://singer:inMyDefence@kvarken.it:27017/?authSource=songscrypt&authMechanism=SCRAM-SHA-256")
+client = MongoClient("mongodb://<user>:<password>@<hostname>:<port>/?authSource=songscrypt&authMechanism=SCRAM-SHA-256")
 db = client['songscrypt'] 
 users = db['users']
 songs = db['songs']
