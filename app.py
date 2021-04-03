@@ -45,7 +45,6 @@ def uploadsong():
         chords = chords.replace(' ', '&nbsp')
         chords = chords.replace('\r\n','<br />')
         source = request.form['source']
-#        chords = Markup("<br />".join(chords.split('\r\n'))) 
         songs.insert_one({'title': title, 'author': author, \
                           'chords': chords, 'source': source})
         return render_template('uploadsongdone.html', title=title, author=author)
