@@ -15,7 +15,7 @@ songs = db['songs']
 
 
 app.config.from_mapping(
-    SECRET_KEY=b'myPL%9$7Ae5S%CTpwS^M4TNGGkND$Z5f')
+    SECRET_KEY=b'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
 Bootstrap(app)
 
 @app.route('/')
