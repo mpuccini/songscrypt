@@ -37,3 +37,5 @@ pip3 install -r requirements.txt
  - [ ] Add a navbar
  - [ ] Add a login
  - [ ] Add a search
+ - [ ] Add docker compose file
+ - [ ] Add documentation on MongoDB setup
