@@ -6,7 +6,7 @@ Data are assumed to be stored with mongoDB into a database named `songscrypt` th
  
 ## Clone repository
 ```
-git clone https://gitea.kvarken.it/mpuccini/songscrypt.git
+git clone [git@github.com:mpuccini/songscrypt.git | https://github.com/mpuccini/songscrypt.git]
 ```
 
 ## Create a virtualenv
@@ -25,7 +25,7 @@ source songscrypt/<venvname>/bin/activate
 pip3 install -r requirements.txt
 ```
 
-## Hot to run app
+## How to run app
 ```
 /songscrypt/<venvname>/bin/python3 /songscrypt/<venvname>/bin/gunicorn --workers 3 --bind unix:/songscrypt/songscrypt.sock -m 007 wsgi:app
 ```
