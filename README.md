@@ -1,5 +1,6 @@
 # SongsCrypt
 A simple repository for the chords of my favorite songs.  
+<<<<<<< HEAD
 Data are assumed to be stored with mongoDB into a database named `songscrypt` that contains two collections:  
  - `songs`: the song chords archive
  - `users`: that stores registered users
@@ -29,13 +30,20 @@ pip3 install -r requirements.txt
 ```
 /songscrypt/<venvname>/bin/python3 /songscrypt/<venvname>/bin/gunicorn --workers 3 --bind unix:/songscrypt/songscrypt.sock -m 007 wsgi:app
 ```
+=======
+>>>>>>> material
 
 ## ToDo
- - [X] Add registration form
+ - [ ] Add authentications
  - [X] Add upload form
  - [X] Add list of all songs
+<<<<<<< HEAD
  - [ ] Add a navbar
  - [ ] Add a login
  - [ ] Add a search
  - [ ] Add docker compose file
  - [ ] Add documentation on MongoDB setup
+=======
+ - [X] Add a navbar
+ - [X] Add a search
+>>>>>>> material

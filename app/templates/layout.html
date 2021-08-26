@@ -1,0 +1,72 @@
+{% block head  %}
+<title>SongsCrypt</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<link rel="icon" href="{{ url_for('static', filename='imgs/favicon.ico') }}">
+{% endblock %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+{% endblock %}
+
+
+
+{% block navbar %}
+<div class="navbar-fixed">
+  <nav>
+  <div class="nav-wrapper purple">
+  <!--<a href="#!" class="brand-logo"><img src="{{ url_for('static', filename='imgs/eodt_logo_w.png') }}" width="250" height="auto"></a>-->
+  <a href="#!" class="brand-logo">SongsCrypt</a>
+  <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+  <ul class="right hide-on-med-and-down">
+    <li><a href="{{ url_for('index') }}">Home<i class="material-icons left">home</i></a></li>
+    <li><a href="{{ url_for('allsongs') }}">Songs<i class="material-icons left">list</i></a></li>
+    <li><a href="{{ url_for('uploadsong') }}">Add new<i class="material-icons left">add</i></a></li>
+  </ul>
+  </div>
+</nav>
+</div>
+
+<ul class="sidenav" id="mobile">
+<li class="logo"><a href="#!" class="brand-logo">SongsCrypt</a></li>
+<li><a href="{{ url_for('index') }}">Home<i class="material-icons left">home</i></a></li>
+<li><a href="{{ url_for('allsongs') }}">Songs<i class="material-icons left">list</i></a></li>
+<li><a href="{{ url_for('uploadsong') }}">Add new<i class="material-icons left">add</i></a></li>
+</ul>
+
+{% endblock %}
+
+
+
+{% block content %}{% endblock %}
+
+
+
+{% block footer %}
+<!-- <div class="container"> -->
+<footer class="page-footer purple lighten-5">
+  <div class="row">
+      <a href="https://github.com/mpuccini/songscrypt/tree/material" target="_blank">Get source code <i class="material-icons">code</i></a>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://songscrypt.kvarken.it">SongsCrypt</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a></p> 
+    </div>
+  </div>
+</footer>
+<!-- </div> -->
+{% endblock %}
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
+<script>
+      $( document ).ready(function(){
+        $('.sidenav').sidenav();
+      });
+</script>
+
+{% block scripts %}{% endblock %}
+

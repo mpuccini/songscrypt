@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container">
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title"><h3>{{ song['title'] }} by {{ song['author'] }}</h3></span>
+  
+  <p><a href="{{ song['source'] }}" target="_blank">Visit source</a></p>
+   <p> {{ song['chords']|safe }} </p>
+  </div>
+  </div>
+</div>
+{% endblock %}

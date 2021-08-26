@@ -1,10 +1,9 @@
-{% extends "bootstrap/base.html" %}
+{% extends "layout.html" %}
+
 {% block content %}
 <div class="container">
-  <h1>SongsCrypt</h1>
-  <hr>
   <h3>Songs list</h3>
-  <table class="table table-striped table-hover">
+  <table class="highlight hoverable responsive-table">
     <thead class="thead-dark">
       <tr>
 	<th scope="col">Title</th>
@@ -17,12 +16,10 @@
       <tr>
 	<td>{{ song['title'] }}</td>
 	<td>{{ song['author'] }}</td>
-	<td><a href="{{ url_for('getsong', title=song['title'])}}"><button type="button" class="btn btn-dark">Get</button></a></td>
+	<td><a class="waves-effect waves-teal btn" href="{{ url_for('getsong', title=song['title'])}}"><i class="material-icons">music_note</i></a></td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
-  <hr>
-  <p><a href="{{ url_for('index') }}">Back</a></p>
 </div>
 {% endblock %}

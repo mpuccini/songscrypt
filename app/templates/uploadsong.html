@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+  <form method="POST" action="" enctype="multipart/form-data" validate> 
+    {{ form.hidden_tag() }}
+    <div class="row">
+      <div class="card">
+        <span class="card-title"><h3>Upload new song</h3></span>
+        <div class="card-content">
+          <div class="input-field col s6">
+            {{ form.title.label }}
+            {{ form.title(class_="active validate")|safe }} 
+          </div>
+          <div class="input-field col s6">
+            {{ form.author.label }}
+            {{ form.author(class_="active validate")|safe }} 
+          </div>
+          <div class="input-field col s12">
+            {{ form.chords.label }}
+            {{ form.chords(class_="materialize-textarea")|safe }}
+          </div>
+          <div class="input-field col s12">
+            {{ form.source.label }}
+            {{ form.source(class_="active")|safe }}
+          </div>
+          <button class="btn waves-effect waves-light" type="submit">
+            Submit
+            <i class="material-icons right">send</i>
+          </button>
+</div>
+{% endblock %}
