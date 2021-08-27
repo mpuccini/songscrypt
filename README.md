@@ -9,5 +9,5 @@ A simple repository for the chords of my favorite songs.
  - [ ] Add documentation on MongoDB setup
  - [X] Add a navbar
  - [X] Add a search
-  - [X] full text search
-  - [X] languages recon & search
+   - [X] full text search
+   - [X] languages recon & search
