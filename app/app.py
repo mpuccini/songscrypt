@@ -5,7 +5,7 @@ from models import UploadForm, searchForm
 from pymongo import MongoClient, results
 import logging
 from config import Config
-
+from langdetect import detect
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -174,6 +174,8 @@ def uploadsong():
         doc['title'] = request.form['title']
         doc['author'] = request.form['author']
         chords = request.form['chords']
+        doc['original_chords'] = chords
+        doc['language'] = detect(chords)
         chords = chords.replace(' ', '&nbsp')
         doc['chords'] = chords.replace('\r\n','<br />')
         doc['source'] = request.form['source']

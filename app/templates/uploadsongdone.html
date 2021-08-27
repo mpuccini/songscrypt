@@ -1,10 +1,14 @@
 {% extends "layout.html" %}
   
 {% block content %}
-<div class="container">
-  <h3>Upload a song</h3>
-    Congratulations! A new song is now stored in the database!
-  <hr>
-  <p><a href="{{ url_for('index') }}">Back</a></p>
-</div>
+    <div class="row container">
+      <div class="section">
+        <div class="card light-green z-depth-3">
+          <span class="card-title"><h3>Congratulations!</h3></span>
+          <div class="card-content black-text">
+         <p>That song is now stored in the Crypt!</p>
+          </div>
+        </div>
+      </div>
+    </div>
 {% endblock %}
